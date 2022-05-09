@@ -28,27 +28,32 @@ class Question:
                     is_correct = True
                     break
             if is_correct:
-                print('[Bingo!] good student!!')
+                print('[Bingo!] good job')
+                print("정답:",test) 
             else:
                 print('[XXX] study harder!!')
+                print("정답",test) 
 
         else:
             en_ask = random.randint(0, en_words.__len__() -1)  # 문제 낼 en 단어 번호를 정하기
             en_question = en_words.pop(en_ask)  # en_words에서 pop으로 문제낼 단어를 빼와 en_question에 저장
             answer = input('[Q]' + en_question + ' -> ')
             kr_answer = kr_words.pop(en_ask)
-            test = kr_answer.split(",")
-            if test.__len__() > 1:
-                print("1st :" + test[0] + "2nd: " + test[1])
-            if test.__len__() > 1:
-                print("1st :" + test[0] + "2nd: " + test[1])
+            test = kr_answer.split(",")# 이 코드와 
+            if test.__len__() > 1:# 이 코드 때문에(정확히는 모르겠지만 아래 코드들도 포함)뜻이 2개인 단어의 정답이 적용됨
+                number = 1 # 문제의 뜻의 개수를 담는 변수
+                for word in test:
+                    print("정답:", number , word)
+                    number = number + 1   
             is_correct = False
             for i in test:
                 if i == answer:
                     is_correct = True
                     break
             if is_correct:
-                print('[Bingo!] good student!!')
+                print('[Bingo!] good job!!')
+                print("정답:",test) 
             else:
                 print('[XXX] study harder!!')
+                print("정답",test) 
         return is_correct
