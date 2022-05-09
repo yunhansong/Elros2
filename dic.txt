@@ -36,5 +36,5 @@ November=11월
 December=12월
 Spring=봄
 Summer=여름
-Fall=가을
+Fall=가을,떨어지다
 Winter=겨울
